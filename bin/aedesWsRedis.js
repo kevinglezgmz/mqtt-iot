@@ -119,10 +119,10 @@ function startAedes() {
     broker.publish({ topic: "aedes/hello", payload: "I'm broker " + broker.id });
   });
 
-  server2.listen(4884, "localhost", function () {
-    console.log("Aedes listening on :", server2.address());
-    broker.publish({ topic: "aedes/hello", payload: "I'm broker " + broker.id });
-  });
+  // server2.listen(4884, "localhost", function () {
+  //   console.log("Aedes listening on :", server2.address());
+  //   broker.publish({ topic: "aedes/hello", payload: "I'm broker " + broker.id });
+  // });
 
   broker.on("subscribe", function (subscriptions, client) {
     console.log(
