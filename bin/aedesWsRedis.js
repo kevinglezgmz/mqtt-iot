@@ -114,12 +114,12 @@ function startAedes() {
   let ws = require("websocket-stream");
   ws.createServer({ server: server2 }, aedes.handle);
 
-  server.listen(process.env.PORT, "alert-fish-overshirt.cyclic.app", function () {
+  server.listen(process.env.PORT, "localhost", function () {
     console.log("Aedes listening on :", server.address());
     broker.publish({ topic: "aedes/hello", payload: "I'm broker " + broker.id });
   });
 
-  server2.listen(4884, "alert-fish-overshirt.cyclic.app", function () {
+  server2.listen(4884, "localhost", function () {
     console.log("Aedes listening on :", server2.address());
     broker.publish({ topic: "aedes/hello", payload: "I'm broker " + broker.id });
   });
