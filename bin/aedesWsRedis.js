@@ -114,7 +114,7 @@ function startAedes() {
   let ws = require("websocket-stream");
   ws.createServer({ server: server2 }, aedes.handle);
 
-  server.listen(process.env.PORT, "localhost", function () {
+  server.listen(process.env.PORT || 4883, "localhost", function () {
     console.log("Aedes listening on :", server.address());
     broker.publish({ topic: "aedes/hello", payload: "I'm broker " + broker.id });
   });
